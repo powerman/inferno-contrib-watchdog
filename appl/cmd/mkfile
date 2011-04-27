@@ -1,0 +1,20 @@
+<../../mkconfig
+
+DIRS=\
+
+<$ROOT/mkfiles/mksubdirs
+test:V: test-$SHELLTYPE
+
+TARG=\
+	watchdog.dis\
+
+SYSMODULES=\
+	sys.m\
+
+MODULES=\
+	../../module/watchdog.m\
+
+DISBIN=../../dis/cmd
+
+<$ROOT/mkfiles/mkdis
+LIMBOFLAGS=$LIMBOFLAGS -I$INFERNO_HOME

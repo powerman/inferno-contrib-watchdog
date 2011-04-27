@@ -1,0 +1,7 @@
+<../mkconfig
+
+DIRS=\
+	cmd\
+
+<$ROOT/mkfiles/mksubdirs
+test:V: test-$SHELLTYPE
