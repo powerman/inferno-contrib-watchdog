@@ -6,17 +6,28 @@ executing some action (shutdown -h by default).
 
 # Install
 
-Make directory with this app/module available in /opt/powerman/watchdog/, for ex.:
+Make directory with this app/module available in /opt/powerman/watchdog/.
+
+Install system-wide:
 
 ```
 # git clone https://github.com/powerman/inferno-contrib-watchdog.git $INFERNO_ROOT/opt/powerman/watchdog
 ```
 
-or in user home directory:
+or in your home directory:
 
 ```
 $ git clone https://github.com/powerman/inferno-contrib-watchdog.git $INFERNO_USER_HOME/opt/powerman/watchdog
 $ emu
+; bind opt /opt
+```
+
+or locally for your project:
+
+```
+$ git clone https://github.com/powerman/inferno-contrib-watchdog.git $YOUR_PROJECT_DIR/opt/powerman/watchdog
+$ emu
+; cd $YOUR_PROJECT_DIR_INSIDE_EMU
 ; bind opt /opt
 ```
 
@@ -29,7 +40,9 @@ use https://github.com/powerman/inferno-opt-setup
 * https://github.com/powerman/inferno-contrib-logger
 
 
-# Example
+# Usage
+
+## Example
 
 Shutdown emu when pid 1 exit:
 
@@ -78,3 +91,4 @@ service()
         …
 }
 ```
+
