@@ -1,20 +1,35 @@
-Provide watchdog command and module for detecting crash of command/pid and executing some action (shutdown -h by default).
+# Description
 
-# Install #
+Provide watchdog command and module for detecting crash of command/pid and
+executing some action (shutdown -h by default).
+
+
+# Install
+
+Make directory with this app/module available in /opt/powerman/watchdog/, for ex.:
 
 ```
-cd $INFERNO_ROOT/opt
-mkdir -p powerman
-hg clone https://inferno-contrib-watchdog.googlecode.com/hg/ powerman/watchdog
+# git clone https://github.com/powerman/inferno-contrib-watchdog.git $INFERNO_ROOT/opt/powerman/watchdog
 ```
 
-After starting emu run /opt/setup.sh to install all /opt packages (you can download it from http://code.google.com/p/inferno-os/issues/detail?id=261).
+or in user home directory:
 
-## Dependencies ##
+```
+$ git clone https://github.com/powerman/inferno-contrib-watchdog.git $INFERNO_USER_HOME/opt/powerman/watchdog
+$ emu
+; bind opt /opt
+```
 
-http://code.google.com/p/inferno-contrib-logger/
+If you want to run commands and read man pages without entering full path
+to them (like `/opt/VENDOR/APP/dis/cmd/NAME`) you should also install and
+use https://github.com/powerman/inferno-opt-setup 
 
-# Example #
+## Dependencies
+
+* https://github.com/powerman/inferno-contrib-logger
+
+
+# Example
 
 Shutdown emu when pid 1 exit:
 
